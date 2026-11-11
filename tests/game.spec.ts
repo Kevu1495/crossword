@@ -108,3 +108,20 @@ test("clicking a new cell keeps direction and clicking it again switches", async
   await page.locator("input").nth(1).click();
   await expect(page.locator(".clue-tag")).toContainText("down");
 });
+
+test("Across clues followed by a Down clue keep the clicked Down word selected", async ({
+  page,
+}) => {
+  await page.goto("/");
+  const across = page.locator(".clue-section").nth(0).locator("li button");
+  const down = page.locator(".clue-section").nth(1).locator("li button");
+  await across.nth(0).click();
+  await across.nth(1).click();
+  await down.nth(3).click();
+  await expect(down.nth(3)).toHaveAttribute("aria-pressed", "true");
+  await expect(page.locator(".clue-tag")).toContainText("down");
+  await across.nth(2).click();
+  await down.nth(1).click();
+  await expect(down.nth(1)).toHaveAttribute("aria-pressed", "true");
+  await expect(page.locator(".clue-tag")).toContainText("down");
+});

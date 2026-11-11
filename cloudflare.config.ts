@@ -10,7 +10,9 @@ export default defineConfig({
     env: {
       DB: bindings.d1({
         name: "crossword",
-        id: process.env.CLOUDFLARE_DATABASE_ID ?? "437b453e-741f-4fc7-b486-ad5caf6ac66d",
+        id:
+          process.env.CLOUDFLARE_DATABASE_ID ??
+          "437b453e-741f-4fc7-b486-ad5caf6ac66d",
       }),
       ASSETS: bindings.assets(),
     },

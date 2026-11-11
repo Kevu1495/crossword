@@ -5,7 +5,7 @@ The game is a cute, quiet place to enjoy crosswords. There are **no timers, scor
 ## Play
 
 - English general knowledge and vocabulary, for a broad international audience.
-- Nine modes: 7×7, 11×11 and 15×15, each Easy, Medium and Hard.
+- Nine modes: 7×7, 11×11 and 15×15, each Easy, Medium and Hard. Every mode has at least three distinct grid patterns; rotated or mirrored copies do not count as additional patterns.
 - Every grid is connected. Each open square belongs to one Across and one Down answer. Answers have at least three letters. Initial templates have 180-degree rotational symmetry. Repeated answers in one puzzle are forbidden.
 - Answers use A–Z; spaces, accents, apostrophes and hyphens are normalized. Clues must signal abbreviations, foreign words, contractions and regional spellings when needed. No arbitrary personal-name fill-in-the-blanks or stretched spellings.
 - Select a clue or cell; type to fill and advance. Click the selected cell again or use Space to switch direction. Arrow keys move; Backspace erases; Enter selects the next clue. Tab moves between the board and controls.

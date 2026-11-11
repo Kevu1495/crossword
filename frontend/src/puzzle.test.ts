@@ -29,12 +29,18 @@ describe("browser puzzle behavior", () => {
   });
   it("prefers unseen puzzles and handles exhaustion without inventing puzzles", () => {
     const easy = pool.filter((x) => x.size === 7 && x.difficulty === "easy");
-    expect(choosePuzzle(pool, 7, "easy", [easy[0].id], easy[0].id)?.id).toBe(
-      easy[1].id,
-    );
     expect(
       choosePuzzle(
         pool,
+        7,
+        "easy",
+        easy.filter((p) => p.id !== easy[1].id).map((p) => p.id),
+        easy[0].id,
+      )?.id,
+    ).toBe(easy[1].id);
+    expect(
+      choosePuzzle(
+        easy.slice(0, 2),
         7,
         "easy",
         easy.map((x) => x.id),

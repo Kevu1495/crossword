@@ -9,7 +9,7 @@
 7. Generation pipeline — reviewed-bank replenishment, SQL exporter and D1 publisher. Scheduled workflow prepared; requires GitHub repository and CI secrets.
 8. Frontend — responsive Warm Café & Cherry Blossom game, keyboard play, clues, optional hints, local saves and gentle completion.
 9. API and progress — Worker endpoints and browser persistence; all nine modes verified through the built client, Worker and local D1. Hosted D1 integration requires deployment.
-10. Quality — 8 TypeScript tests, 9 Python checks, 3 desktop/mobile browser flows and a full nine-mode Worker/D1 browser check pass. Both build targets and lint pass; the dependency audit reports zero advisories. See README for commands.
+10. Quality — 8 TypeScript tests, 10 Python checks, 4 desktop/mobile browser flows and a full nine-mode Worker/D1 browser check pass. Both build targets and lint pass; the dependency audit reports zero advisories. See README for commands.
 11. Hosting and CI/CD — initial Worker and D1 deployment completed through connected Cloudflare tools. GitHub source and verification workflows are connected; automated deployments require scoped CI credentials.
 12. Domain — `crossword.kevinp.dev` attached to the crossword Worker.
 13. Operations — monitoring and content-review instructions prepared; ongoing inventory and difficulty improvement remain operational tasks.

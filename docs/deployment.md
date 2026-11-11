@@ -32,7 +32,7 @@ Use Node **22.23.0+** (`.nvmrc`) for the current Cloudflare CLI. The local brows
 - Repository: https://github.com/Kevu1495/crossword
 - Cloudflare Worker: `crossword`
 - D1 database: `crossword` (`437b453e-741f-4fc7-b486-ad5caf6ac66d`), APAC region.
-- Initial D1 import: 17 puzzles spanning all nine modes, with reviewed clues and provenance.
+- Initial D1 import: 33 puzzles spanning all nine modes, with reviewed clues and provenance.
 - The custom domain is attached to this Worker; the existing portfolio at `kevinp.dev` is unchanged.
 
 Initial deployment uses the connected Cloudflare app: register the static asset manifest, transfer assets using its temporary upload grant, upload SQL through the D1 import's signed URL, then deploy the exact built Worker and attach the domain. No general account credential is extracted or stored in this repository.

@@ -1,6 +1,6 @@
 # Vocabulary and provenance
 
-`approved.json` contains the initial reviewed clue bank. `frontend/src/puzzles.json` contains 17 validated initial puzzles across all nine modes. Original or corrected clues by Little Crossword are dedicated to CC0-1.0; upstream clues retain the Open Crossword Bank CC0 dedication in `LICENSE-CC0.txt`.
+`approved.json` contains the initial reviewed clue bank. `frontend/src/puzzles.json` contains 33 validated puzzles across all nine modes. Original or corrected clues by Little Crossword are dedicated to CC0-1.0; upstream clues retain the Open Crossword Bank CC0 dedication in `LICENSE-CC0.txt`.
 
 Upstream: https://github.com/tamino-martinius/node-open-crossword-bank
 Pinned revision: `b82d6a3899db8437366b618d3c217e9eb942de99`.

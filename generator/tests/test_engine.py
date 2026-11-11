@@ -6,6 +6,7 @@ import unittest
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from engine.core import NoFill, slots_for, solve, template, validate
 from ingestion.import_bank import normalize
+from engine.templates import canonical_key, layout_of
 ROOT=Path(__file__).resolve().parents[2]
 
 class EngineTests(unittest.TestCase):
@@ -31,6 +32,13 @@ class EngineTests(unittest.TestCase):
         for p in puzzles:
             validate(p)
             self.assertEqual(p['review'],'approved')
+
+    def test_every_mode_has_at_least_three_distinct_patterns(self):
+        puzzles=json.loads((ROOT/'frontend/src/puzzles.json').read_text())
+        for size in (7,11,15):
+            for difficulty in ('easy','medium','hard'):
+                patterns={canonical_key(layout_of(p)) for p in puzzles if p['size']==size and p['difficulty']==difficulty}
+                self.assertGreaterEqual(len(patterns),3,(size,difficulty))
 
     def test_solution_and_metadata_corruption_rejected(self):
         p=json.loads((ROOT/'frontend/src/puzzles.json').read_text())[0]

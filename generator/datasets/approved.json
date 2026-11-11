@@ -11584,5 +11584,1175 @@
     "modes": [
       "hard"
     ]
+  },
+  {
+    "id": "fbfc7741bb9e27fe3add",
+    "answer": "XII",
+    "clue": "Twelve, in Roman numerals",
+    "difficulty": 3,
+    "kind": "edited",
+    "frequencyTier": 1,
+    "source": "Little Crossword editorial team",
+    "revision": "pattern-expansion-review-2026-11-11",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "e07305b0809aa25dfe42",
+    "answer": "XVI",
+    "clue": "Sixteen, in Roman numerals",
+    "difficulty": 3,
+    "kind": "edited",
+    "frequencyTier": 1,
+    "source": "Little Crossword editorial team",
+    "revision": "pattern-expansion-review-2026-11-11",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "e91ba0216dea7edcd180",
+    "answer": "IOS",
+    "clue": "Apple’s operating system for the iPhone",
+    "difficulty": 2,
+    "kind": "edited",
+    "frequencyTier": 1,
+    "source": "Little Crossword editorial team",
+    "revision": "pattern-expansion-review-2026-11-11",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "ba38851591d278723e0b",
+    "answer": "ILLICIT",
+    "clue": "Forbidden by law, rules, or custom",
+    "difficulty": 3,
+    "kind": "definition",
+    "frequencyTier": 1,
+    "source": "https://github.com/tamino-martinius/node-open-crossword-bank",
+    "revision": "b82d6a3899db8437366b618d3c217e9eb942de99",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "40c85e649bf016d0b8f3",
+    "answer": "HEN",
+    "clue": "An adult female chicken",
+    "difficulty": 2,
+    "kind": "edited",
+    "frequencyTier": 1,
+    "source": "Little Crossword editorial team",
+    "revision": "pattern-expansion-review-2026-11-11",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "8b060f2b046db83d98a0",
+    "answer": "END",
+    "clue": "The final part of something",
+    "difficulty": 2,
+    "kind": "definition",
+    "frequencyTier": 1,
+    "source": "https://github.com/tamino-martinius/node-open-crossword-bank",
+    "revision": "b82d6a3899db8437366b618d3c217e9eb942de99",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "d49a4e0d40f0357ef8a5",
+    "answer": "NOS",
+    "clue": "Negative replies, as opposed to yeses",
+    "difficulty": 3,
+    "kind": "edited",
+    "frequencyTier": 1,
+    "source": "Little Crossword editorial team",
+    "revision": "pattern-expansion-review-2026-11-11",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "cc62cbfbc63777fbf8a7",
+    "answer": "VOLCANO",
+    "clue": "A mountain with an opening through which lava, ash, and gases erupt",
+    "difficulty": 1,
+    "kind": "definition",
+    "frequencyTier": 1,
+    "source": "https://github.com/tamino-martinius/node-open-crossword-bank",
+    "revision": "b82d6a3899db8437366b618d3c217e9eb942de99",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "7021084c3b4de5edbd79",
+    "answer": "CANON",
+    "clue": "Doctrine",
+    "difficulty": 4,
+    "kind": "synonym",
+    "frequencyTier": 1,
+    "source": "https://github.com/tamino-martinius/node-open-crossword-bank",
+    "revision": "b82d6a3899db8437366b618d3c217e9eb942de99",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "ac409367ca3ff490078a",
+    "answer": "ISLANDS",
+    "clue": "Isles",
+    "difficulty": 3,
+    "kind": "synonym",
+    "frequencyTier": 1,
+    "source": "https://github.com/tamino-martinius/node-open-crossword-bank",
+    "revision": "b82d6a3899db8437366b618d3c217e9eb942de99",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "47027f123ee3df27622b",
+    "answer": "NICOLAS",
+    "clue": "___ Cage, actor in National Treasure",
+    "difficulty": 2,
+    "kind": "edited",
+    "frequencyTier": 1,
+    "source": "Little Crossword editorial team",
+    "revision": "pattern-expansion-review-2026-11-11",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "9fc1f66d1a2f9570da3b",
+    "answer": "ANY",
+    "clue": "Whichever",
+    "difficulty": 4,
+    "kind": "synonym",
+    "frequencyTier": 1,
+    "source": "https://github.com/tamino-martinius/node-open-crossword-bank",
+    "revision": "b82d6a3899db8437366b618d3c217e9eb942de99",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "f1063e169df224ade352",
+    "answer": "STU",
+    "clue": "Short form of Stuart",
+    "difficulty": 3,
+    "kind": "edited",
+    "frequencyTier": 2,
+    "source": "Little Crossword editorial team",
+    "revision": "pattern-expansion-review-2026-11-11",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "0e01eb564e74c6617a34",
+    "answer": "EMINENT",
+    "clue": "Distinguished",
+    "difficulty": 3,
+    "kind": "synonym",
+    "frequencyTier": 1,
+    "source": "https://github.com/tamino-martinius/node-open-crossword-bank",
+    "revision": "b82d6a3899db8437366b618d3c217e9eb942de99",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "c35d1fd4575ad874d28b",
+    "answer": "RYU",
+    "clue": "Headband-wearing fighter in the Street Fighter games",
+    "difficulty": 3,
+    "kind": "edited",
+    "frequencyTier": 2,
+    "source": "Little Crossword editorial team",
+    "revision": "pattern-expansion-review-2026-11-11",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "2b903cf4f9fa68ca9dd1",
+    "answer": "SPAN",
+    "clue": "The full extent of something from end to end.",
+    "difficulty": 3,
+    "kind": "definition",
+    "frequencyTier": 1,
+    "source": "https://github.com/tamino-martinius/node-open-crossword-bank",
+    "revision": "b82d6a3899db8437366b618d3c217e9eb942de99",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "71e376e8ab5bafcb19b3",
+    "answer": "STEEP",
+    "clue": "Having a sharp incline.",
+    "difficulty": 2,
+    "kind": "definition",
+    "frequencyTier": 1,
+    "source": "https://github.com/tamino-martinius/node-open-crossword-bank",
+    "revision": "b82d6a3899db8437366b618d3c217e9eb942de99",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "40f97fa01708c2c295bb",
+    "answer": "PAR",
+    "clue": "The standard number of strokes set for a golf hole",
+    "difficulty": 3,
+    "kind": "definition",
+    "frequencyTier": 1,
+    "source": "https://github.com/tamino-martinius/node-open-crossword-bank",
+    "revision": "b82d6a3899db8437366b618d3c217e9eb942de99",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "78cfd88df5f3b73b31c7",
+    "answer": "ANI",
+    "clue": "Tropical black bird related to the cuckoo",
+    "difficulty": 4,
+    "kind": "definition",
+    "frequencyTier": 2,
+    "source": "https://github.com/tamino-martinius/node-open-crossword-bank",
+    "revision": "b82d6a3899db8437366b618d3c217e9eb942de99",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "2037919891f13dffe317",
+    "answer": "NICKEL",
+    "clue": "U.S. five-cent coin",
+    "difficulty": 3,
+    "kind": "edited",
+    "frequencyTier": 1,
+    "source": "Little Crossword editorial team",
+    "revision": "pattern-expansion-review-2026-11-11",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "a64b21d0f7e7eb26700a",
+    "answer": "TOW",
+    "clue": "Pull a vehicle or boat using a rope or chain",
+    "difficulty": 1,
+    "kind": "definition",
+    "frequencyTier": 1,
+    "source": "https://github.com/tamino-martinius/node-open-crossword-bank",
+    "revision": "b82d6a3899db8437366b618d3c217e9eb942de99",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "5ef34350294a3628934d",
+    "answer": "TONS",
+    "clue": "Large units of weight, or informally a great many",
+    "difficulty": 3,
+    "kind": "definition",
+    "frequencyTier": 1,
+    "source": "https://github.com/tamino-martinius/node-open-crossword-bank",
+    "revision": "b82d6a3899db8437366b618d3c217e9eb942de99",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "9eb4be97bb348a8f38ec",
+    "answer": "WITNESS",
+    "clue": "Observer",
+    "difficulty": 3,
+    "kind": "synonym",
+    "frequencyTier": 1,
+    "source": "https://github.com/tamino-martinius/node-open-crossword-bank",
+    "revision": "b82d6a3899db8437366b618d3c217e9eb942de99",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "2d9de0d79ddff2512457",
+    "answer": "REM",
+    "clue": "Dream-heavy stage of sleep, abbreviated",
+    "difficulty": 2,
+    "kind": "edited",
+    "frequencyTier": 2,
+    "source": "Little Crossword editorial team",
+    "revision": "pattern-expansion-review-2026-11-11",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "0cc438035fed13495cc4",
+    "answer": "RELEGATED",
+    "clue": "Demoted to a lower rank or division",
+    "difficulty": 2,
+    "kind": "definition",
+    "frequencyTier": 1,
+    "source": "https://github.com/tamino-martinius/node-open-crossword-bank",
+    "revision": "b82d6a3899db8437366b618d3c217e9eb942de99",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "d094d07e8a99d3692de2",
+    "answer": "EPIDEMIC",
+    "clue": "Outbreak",
+    "difficulty": 2,
+    "kind": "synonym",
+    "frequencyTier": 1,
+    "source": "https://github.com/tamino-martinius/node-open-crossword-bank",
+    "revision": "b82d6a3899db8437366b618d3c217e9eb942de99",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "e42d4974058605bcf2a2",
+    "answer": "MAX",
+    "clue": "Maximum, informally",
+    "difficulty": 3,
+    "kind": "edited",
+    "frequencyTier": 1,
+    "source": "Little Crossword editorial team",
+    "revision": "pattern-expansion-review-2026-11-11",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "09e622758864b5e7999d",
+    "answer": "TARA",
+    "clue": "___, the O’Hara family home in Gone with the Wind",
+    "difficulty": 3,
+    "kind": "edited",
+    "frequencyTier": 1,
+    "source": "Little Crossword editorial team",
+    "revision": "pattern-expansion-review-2026-11-11",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "1a3d7924b0d32bec989e",
+    "answer": "IMAM",
+    "clue": "Religious title for a leader of an Islamic community",
+    "difficulty": 3,
+    "kind": "definition",
+    "frequencyTier": 1,
+    "source": "https://github.com/tamino-martinius/node-open-crossword-bank",
+    "revision": "b82d6a3899db8437366b618d3c217e9eb942de99",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "e5c41062a9ae5f910ec5",
+    "answer": "CART",
+    "clue": "A vehicle for carrying goods.",
+    "difficulty": 2,
+    "kind": "definition",
+    "frequencyTier": 1,
+    "source": "https://github.com/tamino-martinius/node-open-crossword-bank",
+    "revision": "b82d6a3899db8437366b618d3c217e9eb942de99",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "c4d874c72a8997446a01",
+    "answer": "AMERICA",
+    "clue": "Either continent of the Western Hemisphere, or the U.S. informally.",
+    "difficulty": 2,
+    "kind": "definition",
+    "frequencyTier": 1,
+    "source": "https://github.com/tamino-martinius/node-open-crossword-bank",
+    "revision": "b82d6a3899db8437366b618d3c217e9eb942de99",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "1ca253f9e0c8036b7c6b",
+    "answer": "NETFLIX",
+    "clue": "Popular streaming service for films and TV series",
+    "difficulty": 2,
+    "kind": "definition",
+    "frequencyTier": 1,
+    "source": "https://github.com/tamino-martinius/node-open-crossword-bank",
+    "revision": "b82d6a3899db8437366b618d3c217e9eb942de99",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "af7455067522f5e01f1d",
+    "answer": "FED",
+    "clue": "Gave food to a person or animal",
+    "difficulty": 2,
+    "kind": "definition",
+    "frequencyTier": 1,
+    "source": "https://github.com/tamino-martinius/node-open-crossword-bank",
+    "revision": "b82d6a3899db8437366b618d3c217e9eb942de99",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "10997b84b27420816716",
+    "answer": "KRIS",
+    "clue": "___ Kristofferson, singer-songwriter of Me and Bobby McGee",
+    "difficulty": 4,
+    "kind": "edited",
+    "frequencyTier": 1,
+    "source": "Little Crossword editorial team",
+    "revision": "pattern-expansion-review-2026-11-11",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "1878a095f87839cc46ed",
+    "answer": "NEED",
+    "clue": "Require",
+    "difficulty": 2,
+    "kind": "synonym",
+    "frequencyTier": 1,
+    "source": "https://github.com/tamino-martinius/node-open-crossword-bank",
+    "revision": "b82d6a3899db8437366b618d3c217e9eb942de99",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "b97bfe5db9cf6b968236",
+    "answer": "JETS",
+    "clue": "Fast aircraft driven by turbine engines",
+    "difficulty": 2,
+    "kind": "definition",
+    "frequencyTier": 1,
+    "source": "https://github.com/tamino-martinius/node-open-crossword-bank",
+    "revision": "b82d6a3899db8437366b618d3c217e9eb942de99",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "420b7bc9f76a0280aaf4",
+    "answer": "JOE",
+    "clue": "Informal slang for a cup of coffee",
+    "difficulty": 4,
+    "kind": "definition",
+    "frequencyTier": 1,
+    "source": "https://github.com/tamino-martinius/node-open-crossword-bank",
+    "revision": "b82d6a3899db8437366b618d3c217e9eb942de99",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "512093a827cf49c716af",
+    "answer": "WEDGE",
+    "clue": "A piece of something cut into a triangular shape",
+    "difficulty": 2,
+    "kind": "definition",
+    "frequencyTier": 1,
+    "source": "https://github.com/tamino-martinius/node-open-crossword-bank",
+    "revision": "b82d6a3899db8437366b618d3c217e9eb942de99",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "203762277b569f43a81e",
+    "answer": "WIPE",
+    "clue": "To clean or dry by rubbing.",
+    "difficulty": 1,
+    "kind": "definition",
+    "frequencyTier": 1,
+    "source": "https://github.com/tamino-martinius/node-open-crossword-bank",
+    "revision": "b82d6a3899db8437366b618d3c217e9eb942de99",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "869b60b31d5abc001daf",
+    "answer": "AOL",
+    "clue": "Early internet service provider known for its dial-up CDs",
+    "difficulty": 3,
+    "kind": "definition",
+    "frequencyTier": 2,
+    "source": "https://github.com/tamino-martinius/node-open-crossword-bank",
+    "revision": "b82d6a3899db8437366b618d3c217e9eb942de99",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "24b4c9a2ba2b54ffd41d",
+    "answer": "AUD",
+    "clue": "Australian dollar, in currency codes",
+    "difficulty": 4,
+    "kind": "edited",
+    "frequencyTier": 2,
+    "source": "Little Crossword editorial team",
+    "revision": "pattern-expansion-review-2026-11-11",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "27d714d37fd8e11739a2",
+    "answer": "LOIS",
+    "clue": "___ Lane, reporter in the Superman comics",
+    "difficulty": 3,
+    "kind": "edited",
+    "frequencyTier": 1,
+    "source": "Little Crossword editorial team",
+    "revision": "pattern-expansion-review-2026-11-11",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "4efb504fc055d2cbf4cc",
+    "answer": "OPS",
+    "clue": "Operations, abbreviated",
+    "difficulty": 3,
+    "kind": "edited",
+    "frequencyTier": 1,
+    "source": "Little Crossword editorial team",
+    "revision": "pattern-expansion-review-2026-11-11",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "acbb9e0395c8a943d521",
+    "answer": "DISPLACED",
+    "clue": "Forced to leave one's usual place or position",
+    "difficulty": 2,
+    "kind": "definition",
+    "frequencyTier": 1,
+    "source": "https://github.com/tamino-martinius/node-open-crossword-bank",
+    "revision": "b82d6a3899db8437366b618d3c217e9eb942de99",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "e2afd518b31c7e80f95a",
+    "answer": "APPS",
+    "clue": "Applications",
+    "difficulty": 2,
+    "kind": "synonym",
+    "frequencyTier": 1,
+    "source": "https://github.com/tamino-martinius/node-open-crossword-bank",
+    "revision": "b82d6a3899db8437366b618d3c217e9eb942de99",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "2679303650df3f2b2015",
+    "answer": "TIN",
+    "clue": "a silvery-white metal.",
+    "difficulty": 1,
+    "kind": "definition",
+    "frequencyTier": 1,
+    "source": "https://github.com/tamino-martinius/node-open-crossword-bank",
+    "revision": "b82d6a3899db8437366b618d3c217e9eb942de99",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "6feadb2ca2e81aa90c85",
+    "answer": "CONCEIVE",
+    "clue": "To form an idea or plan in the mind",
+    "difficulty": 2,
+    "kind": "definition",
+    "frequencyTier": 1,
+    "source": "https://github.com/tamino-martinius/node-open-crossword-bank",
+    "revision": "b82d6a3899db8437366b618d3c217e9eb942de99",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "fce0af93da8b5676ec33",
+    "answer": "TENSE",
+    "clue": "Feeling or showing nervous strain",
+    "difficulty": 2,
+    "kind": "definition",
+    "frequencyTier": 1,
+    "source": "https://github.com/tamino-martinius/node-open-crossword-bank",
+    "revision": "b82d6a3899db8437366b618d3c217e9eb942de99",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "30ad2a624d2282d46f23",
+    "answer": "TOOK",
+    "clue": "Past tense of grasp or seize",
+    "difficulty": 2,
+    "kind": "definition",
+    "frequencyTier": 1,
+    "source": "https://github.com/tamino-martinius/node-open-crossword-bank",
+    "revision": "b82d6a3899db8437366b618d3c217e9eb942de99",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "21073f6b679658d4e2ed",
+    "answer": "DECK",
+    "clue": "A complete pack of playing cards",
+    "difficulty": 3,
+    "kind": "edited",
+    "frequencyTier": 1,
+    "source": "Little Crossword editorial team",
+    "revision": "pattern-expansion-review-2026-11-11",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "533731da844500c48fa3",
+    "answer": "TODD",
+    "clue": "The fox in Disney’s The Fox and the Hound",
+    "difficulty": 2,
+    "kind": "edited",
+    "frequencyTier": 1,
+    "source": "Little Crossword editorial team",
+    "revision": "pattern-expansion-review-2026-11-11",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "3283d56e83736de20ab9",
+    "answer": "THREATS",
+    "clue": "Statements of intention to inflict harm",
+    "difficulty": 2,
+    "kind": "definition",
+    "frequencyTier": 1,
+    "source": "https://github.com/tamino-martinius/node-open-crossword-bank",
+    "revision": "b82d6a3899db8437366b618d3c217e9eb942de99",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "2e7aff733e285af8b8c7",
+    "answer": "HUD",
+    "clue": "Head-up display, abbreviated",
+    "difficulty": 3,
+    "kind": "edited",
+    "frequencyTier": 1,
+    "source": "Little Crossword editorial team",
+    "revision": "pattern-expansion-review-2026-11-11",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "7a05f51eef25cde00abf",
+    "answer": "HAL",
+    "clue": "Sentient onboard computer in Kubrick's '2001: A Space Odyssey'",
+    "difficulty": 4,
+    "kind": "definition",
+    "frequencyTier": 1,
+    "source": "https://github.com/tamino-martinius/node-open-crossword-bank",
+    "revision": "b82d6a3899db8437366b618d3c217e9eb942de99",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "06abdf7d4df33a024731",
+    "answer": "SNP",
+    "clue": "Scottish National Party, abbreviated",
+    "difficulty": 3,
+    "kind": "edited",
+    "frequencyTier": 1,
+    "source": "Little Crossword editorial team",
+    "revision": "pattern-expansion-review-2026-11-11",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "003c2a20ca0485cd07f4",
+    "answer": "HOME",
+    "clue": "The place where one lives.",
+    "difficulty": 1,
+    "kind": "definition",
+    "frequencyTier": 1,
+    "source": "https://github.com/tamino-martinius/node-open-crossword-bank",
+    "revision": "b82d6a3899db8437366b618d3c217e9eb942de99",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "bfe2d876822a81416100",
+    "answer": "DAB",
+    "clue": "A small quantity of something applied with a light touch",
+    "difficulty": 2,
+    "kind": "definition",
+    "frequencyTier": 2,
+    "source": "https://github.com/tamino-martinius/node-open-crossword-bank",
+    "revision": "b82d6a3899db8437366b618d3c217e9eb942de99",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "069a45a75b04dbee24fd",
+    "answer": "DETAIL",
+    "clue": "A small individual fact or feature",
+    "difficulty": 2,
+    "kind": "definition",
+    "frequencyTier": 1,
+    "source": "https://github.com/tamino-martinius/node-open-crossword-bank",
+    "revision": "b82d6a3899db8437366b618d3c217e9eb942de99",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "a5c24ea1e299e8e323f1",
+    "answer": "CLARK",
+    "clue": "Common English surname; the explorer who partnered with Lewis",
+    "difficulty": 3,
+    "kind": "definition",
+    "frequencyTier": 1,
+    "source": "https://github.com/tamino-martinius/node-open-crossword-bank",
+    "revision": "b82d6a3899db8437366b618d3c217e9eb942de99",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "4ee78f77c14756a105d6",
+    "answer": "REEL",
+    "clue": "Stagger",
+    "difficulty": 3,
+    "kind": "synonym",
+    "frequencyTier": 1,
+    "source": "https://github.com/tamino-martinius/node-open-crossword-bank",
+    "revision": "b82d6a3899db8437366b618d3c217e9eb942de99",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "04837fc303823dd4ce42",
+    "answer": "ENVY",
+    "clue": "A feeling of discontented longing for another's advantages",
+    "difficulty": 2,
+    "kind": "definition",
+    "frequencyTier": 1,
+    "source": "https://github.com/tamino-martinius/node-open-crossword-bank",
+    "revision": "b82d6a3899db8437366b618d3c217e9eb942de99",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "da0965185f227f905792",
+    "answer": "BOB",
+    "clue": "A short haircut level with the chin",
+    "difficulty": 4,
+    "kind": "definition",
+    "frequencyTier": 1,
+    "source": "https://github.com/tamino-martinius/node-open-crossword-bank",
+    "revision": "b82d6a3899db8437366b618d3c217e9eb942de99",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "93a52a1fbd8e710ad331",
+    "answer": "BONDS",
+    "clue": "Ties",
+    "difficulty": 3,
+    "kind": "synonym",
+    "frequencyTier": 1,
+    "source": "https://github.com/tamino-martinius/node-open-crossword-bank",
+    "revision": "b82d6a3899db8437366b618d3c217e9eb942de99",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "7df570009f22453ade91",
+    "answer": "ONCE",
+    "clue": "On a single occasion; one time only",
+    "difficulty": 2,
+    "kind": "definition",
+    "frequencyTier": 1,
+    "source": "https://github.com/tamino-martinius/node-open-crossword-bank",
+    "revision": "b82d6a3899db8437366b618d3c217e9eb942de99",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "949ff4a66fcc1e57230a",
+    "answer": "BOYD",
+    "clue": "William ___, author of Any Human Heart",
+    "difficulty": 3,
+    "kind": "edited",
+    "frequencyTier": 1,
+    "source": "Little Crossword editorial team",
+    "revision": "pattern-expansion-review-2026-11-11",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "d9b3b61c21c3b6e799c6",
+    "answer": "EASE",
+    "clue": "Comfort",
+    "difficulty": 2,
+    "kind": "synonym",
+    "frequencyTier": 1,
+    "source": "https://github.com/tamino-martinius/node-open-crossword-bank",
+    "revision": "b82d6a3899db8437366b618d3c217e9eb942de99",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "3ad22252a1d97bd04261",
+    "answer": "ISNT",
+    "clue": "Contraction of 'is not' (apostrophe omitted)",
+    "difficulty": 2,
+    "kind": "edited",
+    "frequencyTier": 1,
+    "source": "Little Crossword editorial team",
+    "revision": "pattern-expansion-review-2026-11-11",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "519ec55736280f7237f6",
+    "answer": "IDOL",
+    "clue": "Icon",
+    "difficulty": 3,
+    "kind": "synonym",
+    "frequencyTier": 1,
+    "source": "https://github.com/tamino-martinius/node-open-crossword-bank",
+    "revision": "b82d6a3899db8437366b618d3c217e9eb942de99",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "2ee4c18f0f7070d28b57",
+    "answer": "RICHARD",
+    "clue": "___ the Lionheart, medieval English king",
+    "difficulty": 3,
+    "kind": "edited",
+    "frequencyTier": 1,
+    "source": "Little Crossword editorial team",
+    "revision": "pattern-expansion-review-2026-11-11",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "2743c673908ca1c17cc9",
+    "answer": "REN",
+    "clue": "Kylo ___, masked character in Star Wars",
+    "difficulty": 3,
+    "kind": "edited",
+    "frequencyTier": 1,
+    "source": "Little Crossword editorial team",
+    "revision": "pattern-expansion-review-2026-11-11",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "6f5d2269d3fbd5f50cd7",
+    "answer": "RAO",
+    "clue": "C. N. R. ___, Indian chemist and Bharat Ratna recipient",
+    "difficulty": 4,
+    "kind": "edited",
+    "frequencyTier": 2,
+    "source": "Little Crossword editorial team",
+    "revision": "pattern-expansion-review-2026-11-11",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "8ba715a8205daebcd23b",
+    "answer": "VACANCY",
+    "clue": "Opening",
+    "difficulty": 2,
+    "kind": "synonym",
+    "frequencyTier": 1,
+    "source": "https://github.com/tamino-martinius/node-open-crossword-bank",
+    "revision": "b82d6a3899db8437366b618d3c217e9eb942de99",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "27c3a4f916a37cc6db64",
+    "answer": "CEO",
+    "clue": "Chief executive officer, in short",
+    "difficulty": 1,
+    "kind": "definition",
+    "frequencyTier": 1,
+    "source": "https://github.com/tamino-martinius/node-open-crossword-bank",
+    "revision": "b82d6a3899db8437366b618d3c217e9eb942de99",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "ec0e07db7c60f11d52b8",
+    "answer": "ALT",
+    "clue": "A modifier key on a computer keyboard, often used with other keys for shortcuts.",
+    "difficulty": 3,
+    "kind": "definition",
+    "frequencyTier": 1,
+    "source": "https://github.com/tamino-martinius/node-open-crossword-bank",
+    "revision": "b82d6a3899db8437366b618d3c217e9eb942de99",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "ceb0d81c0315a11e8f50",
+    "answer": "TAO",
+    "clue": "A guiding principle or path in Chinese philosophy",
+    "difficulty": 3,
+    "kind": "definition",
+    "frequencyTier": 1,
+    "source": "https://github.com/tamino-martinius/node-open-crossword-bank",
+    "revision": "b82d6a3899db8437366b618d3c217e9eb942de99",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "e4ffc2a0bc1eedc8fcab",
+    "answer": "YIELDED",
+    "clue": "Gave way or surrendered",
+    "difficulty": 3,
+    "kind": "edited",
+    "frequencyTier": 1,
+    "source": "Little Crossword editorial team",
+    "revision": "pattern-expansion-review-2026-11-11",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "ad90708c6de4d675ea4b",
+    "answer": "NED",
+    "clue": "A nickname for Edward",
+    "difficulty": 4,
+    "kind": "edited",
+    "frequencyTier": 1,
+    "source": "Little Crossword editorial team",
+    "revision": "pattern-expansion-review-2026-11-11",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
+  },
+  {
+    "id": "2adcf99e38973529606d",
+    "answer": "LOTS",
+    "clue": "Plenty",
+    "difficulty": 2,
+    "kind": "synonym",
+    "frequencyTier": 1,
+    "source": "https://github.com/tamino-martinius/node-open-crossword-bank",
+    "revision": "b82d6a3899db8437366b618d3c217e9eb942de99",
+    "license": "CC0-1.0",
+    "review": "approved",
+    "modes": [
+      "medium"
+    ]
   }
 ]

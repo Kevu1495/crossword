@@ -451,9 +451,9 @@ export default function App() {
                           autoCorrect="off"
                           autoCapitalize="characters"
                           spellCheck={false}
-                          onFocus={() => {
-                            if (selected !== k) selectCell(r, c);
-                          }}
+                          // Clue clicks and keyboard navigation choose the word.
+                          // Focus only follows the cell; it must not restore the old word.
+                          onFocus={() => setSelected(k)}
                           onPointerDown={() => {
                             pointerWasSelected.current = selected === k;
                           }}
