@@ -1,0 +1,830 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap");
+:root {
+  font-family: "DM Sans", sans-serif;
+  color: #3d3436;
+  background: #fff8f0;
+  font-synthesis: none;
+  font-weight: 400;
+  --cream: #fff8f0;
+  --blush: #fde2e4;
+  --espresso: #3d3436;
+  --sage: #cdeac0;
+  --coral: #ff758f;
+  --muted: #86777a;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+button,
+input,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+button {
+  font: inherit;
+  cursor: pointer;
+  color: inherit;
+}
+button:disabled {
+  cursor: wait;
+  opacity: 0.55;
+}
+button,
+a,
+input {
+  touch-action: manipulation;
+}
+button:focus-visible,
+a:focus-visible,
+summary:focus-visible {
+  outline: 3px solid #8b4959;
+  outline-offset: 4px;
+}
+a {
+  color: inherit;
+}
+button {
+  border: 0;
+  background: none;
+}
+.app-shell {
+  max-width: 1240px;
+  margin: auto;
+  padding: 0 48px;
+}
+.site-header {
+  height: 104px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #eadfd5;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-size: 23px;
+  font-weight: 650;
+  letter-spacing: -1px;
+}
+.brand-dot {
+  color: var(--coral);
+}
+.flower {
+  width: 96px;
+  height: 96px;
+}
+.flower.small {
+  width: 32px;
+  height: 32px;
+}
+.text-button {
+  font-size: 13px;
+  font-weight: 550;
+  padding: 10px;
+}
+.text-button:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.site-header .text-button span {
+  margin-left: 12px;
+}
+main {
+  max-width: 1080px;
+  margin: auto;
+}
+.intro {
+  position: relative;
+  padding: 59px 0 42px;
+}
+.eyebrow {
+  font-size: 10px;
+  font-weight: 650;
+  letter-spacing: 2.3px;
+  color: #9b5a69;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.eyebrow span {
+  font-size: 16px;
+}
+h1 {
+  font-family: Lora, Georgia, serif;
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 1.17;
+  letter-spacing: -2px;
+  margin: 20px 0 17px;
+}
+h1 em {
+  color: #a45667;
+  font-weight: 400;
+}
+.intro > p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.85;
+  margin: 0;
+}
+.intro-flower {
+  position: absolute;
+  right: 72px;
+  top: 94px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  transform: rotate(12deg);
+}
+.intro-flower .flower {
+  opacity: 0.77;
+}
+.intro-flower span {
+  font-family: Lora, Georgia, serif;
+  font-style: italic;
+  font-size: 15px;
+  color: #a86f78;
+  margin-top: 15px;
+}
+.game-card {
+  border: 1px solid #e7dcd2;
+  background: #fffcf8;
+  border-radius: 20px;
+  box-shadow: 0 9px 32px #76544308;
+  overflow: hidden;
+}
+.game-settings {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 27px 30px;
+  border-bottom: 1px solid #ece3da;
+}
+.field-label {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 1.7px;
+  font-weight: 700;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+.segmented {
+  display: flex;
+  background: #f4eee7;
+  border-radius: 10px;
+  padding: 4px;
+  gap: 4px;
+}
+.segmented button {
+  min-width: 109px;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 9px 12px;
+  border-radius: 7px;
+}
+.segmented button span {
+  display: block;
+  font-size: 9px;
+  font-weight: 400;
+  color: #887a7b;
+  margin-top: 4px;
+}
+.segmented button[aria-pressed="true"] {
+  background: #fffcf8;
+  box-shadow: 0 2px 5px #3d343612;
+}
+.difficulty {
+  display: flex;
+  gap: 6px;
+  margin-top: 7px;
+}
+.difficulty button {
+  font-size: 12px;
+  padding: 10px 13px;
+  border-radius: 20px;
+  border: 1px solid transparent;
+}
+.difficulty button span {
+  font-size: 16px;
+  margin-right: 3px;
+}
+.difficulty button[aria-pressed="true"] {
+  background: var(--blush);
+  border-color: #efc5cd;
+  color: #824453;
+}
+.difficulty button:hover {
+  background: #f8eee9;
+}
+.game-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 35px;
+  padding: 27px 30px 24px;
+}
+.board-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 10px;
+  color: #8b7a7d;
+  margin-bottom: 15px;
+  gap: 8px;
+}
+.board-heading > span:first-child {
+  color: #6b5e60;
+}
+.live-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: #90ad85;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+.board {
+  display: grid;
+  gap: 1px;
+  padding: 2px;
+  border: 1px solid var(--espresso);
+  border-radius: 7px;
+  background: var(--espresso);
+  overflow: hidden;
+  aspect-ratio: 1;
+}
+.cell {
+  position: relative;
+  background: var(--cream);
+  min-width: 0;
+  min-height: 0;
+  aspect-ratio: 1;
+  transition: background 0.12s;
+}
+.cell.active-word {
+  background: var(--sage);
+}
+.cell.selected {
+  background: var(--coral);
+  box-shadow: inset 0 0 0 2px #a54560;
+  z-index: 1;
+}
+.cell input {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  width: 100%;
+  height: 100%;
+  padding: 8px 0 0;
+  text-align: center;
+  color: var(--espresso);
+  font-family: "DM Sans", sans-serif;
+  font-size: clamp(20px, 3vw, 29px);
+  font-weight: 550;
+  outline: 0;
+  caret-color: transparent;
+}
+.cell-number {
+  position: absolute;
+  left: 5px;
+  top: 3px;
+  font-size: 9px;
+  font-weight: 550;
+  pointer-events: none;
+}
+.cell.wrong:after {
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  left: 30%;
+  width: 40%;
+  border-bottom: 2px dotted #9b2445;
+  pointer-events: none;
+}
+.cell.revealed:before {
+  content: "";
+  position: absolute;
+  right: 3px;
+  bottom: 3px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #77636a;
+  pointer-events: none;
+}
+.size-11 .cell input {
+  font-size: 22px;
+  padding-top: 7px;
+}
+.size-15 .cell input {
+  font-size: 17px;
+  padding-top: 6px;
+}
+.size-15 .cell-number {
+  font-size: 6px;
+  left: 2px;
+  top: 1px;
+}
+.size-11 .cell-number {
+  font-size: 7px;
+  left: 3px;
+  top: 2px;
+}
+.blocked {
+  background: var(--espresso);
+  aspect-ratio: 1;
+}
+.current-clue {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  background: #edf4e7;
+  border: 1px solid #dfe8d8;
+  border-radius: 10px;
+  padding: 13px 14px;
+  margin-top: 15px;
+  min-height: 72px;
+}
+.clue-tag {
+  font-size: 9px;
+  font-weight: 700;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.current-clue p {
+  font-size: 12px;
+  line-height: 1.55;
+  margin: 0;
+  flex: 1;
+}
+.current-clue p > span {
+  color: #776c6b;
+  white-space: nowrap;
+}
+.next-clue {
+  font-size: 23px;
+  padding: 4px;
+}
+.tools {
+  display: flex;
+  justify-content: space-between;
+  gap: 4px;
+  margin-top: 16px;
+}
+.tools button {
+  border: 1px solid #e6dbd2;
+  border-radius: 7px;
+  padding: 9px 10px;
+  font-size: 14px;
+  background: #fffdf9;
+  white-space: nowrap;
+}
+.tools button span {
+  font-size: 10px;
+  margin-left: 3px;
+}
+.tools button:hover {
+  background: var(--blush);
+}
+.keyboard-note {
+  text-align: center;
+  color: #9c8d8f;
+  font-size: 10px;
+  margin: 16px 0 0;
+}
+.clue-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  max-height: 580px;
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #e5d4ce transparent;
+  padding-right: 3px;
+}
+.clue-section h2 {
+  position: sticky;
+  top: 0;
+  background: #fffcf8;
+  margin: 0 0 15px;
+  padding: 0 0 12px;
+  font-family: Lora, Georgia, serif;
+  font-size: 19px;
+  font-weight: 400;
+  border-bottom: 1px solid #e9ded5;
+  z-index: 2;
+}
+.clue-section h2 > span:first-child {
+  color: #aa6475;
+  font-family: "DM Sans", sans-serif;
+  font-size: 22px;
+  margin-right: 3px;
+}
+.clue-count {
+  display: block;
+  font-family: "DM Sans", sans-serif;
+  font-size: 9px;
+  font-weight: 400;
+  color: #998b8e;
+  margin: 7px 0 0 25px;
+}
+.clue-section ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.clue-section li {
+  margin: 0 0 3px;
+}
+.clue-section li button {
+  display: flex;
+  text-align: left;
+  gap: 8px;
+  line-height: 1.6;
+  font-size: 11px;
+  width: 100%;
+  padding: 8px 7px;
+  border-radius: 7px;
+}
+.clue-section li button:hover {
+  background: #f5eee7;
+}
+.clue-section li button.current {
+  background: var(--blush);
+  color: #783e4e;
+}
+.clue-number {
+  font-size: 10px;
+  font-weight: 700;
+  min-width: 15px;
+  line-height: 1.8;
+  color: #988487;
+}
+.answer-length {
+  color: #95878a;
+  white-space: nowrap;
+}
+.clue-section li button.solved .clue-number {
+  color: #54704b;
+}
+.clue-section li button.solved .clue-number:after {
+  content: "✓";
+  display: block;
+  font-size: 9px;
+  line-height: 1;
+}
+.game-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 20px 30px;
+  border-top: 1px solid #ece3da;
+  background: #fcf6ef;
+}
+.save-status {
+  font-size: 11px;
+  color: #908084;
+}
+.game-bottom > div {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.game-bottom .text-button {
+  font-size: 11px;
+  color: #958589;
+}
+.primary-button {
+  background: var(--coral);
+  border: 1px solid #ed6985;
+  border-radius: 8px;
+  padding: 12px 18px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #452c35;
+}
+.primary-button span {
+  margin-left: 14px;
+}
+.primary-button:hover {
+  background: #ff8ba1;
+}
+.gentle-message {
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #9a7f85;
+  font-family: Lora, Georgia, serif;
+  font-size: 13px;
+  font-style: italic;
+  text-align: center;
+  padding: 20px;
+}
+.gentle-message > span {
+  font-size: 22px;
+  color: #d799a6;
+}
+.celebration {
+  background: #edf4e7;
+  border-radius: 14px;
+  margin: 18px 0;
+  color: #4d6846;
+  font-style: normal;
+}
+.celebration p {
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+  margin: 7px 0;
+}
+footer {
+  border-top: 1px solid #eadfd5;
+  padding: 23px 0 30px;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  color: #9c8b8f;
+  font-size: 10px;
+  align-items: start;
+}
+footer p {
+  margin: 0;
+  line-height: 1.8;
+}
+footer details {
+  max-width: 380px;
+}
+footer summary {
+  cursor: pointer;
+}
+footer details p {
+  margin-top: 10px;
+}
+.footer-flower {
+  color: #c9919f;
+}
+dialog {
+  border: 1px solid #e2cfc8;
+  border-radius: 22px;
+  background: var(--cream);
+  color: var(--espresso);
+  padding: 0;
+  max-width: 460px;
+  width: calc(100% - 36px);
+  box-shadow: 0 25px 100px #3d343630;
+}
+dialog::backdrop {
+  background: #3d34366b;
+  backdrop-filter: blur(3px);
+}
+.modal-content {
+  padding: 32px;
+}
+.modal-content h2 {
+  font-family: Lora, Georgia, serif;
+  font-weight: 400;
+  font-size: 27px;
+  line-height: 1.35;
+}
+.modal-content p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #7d6c71;
+}
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 25px;
+}
+@media (min-width: 1400px) {
+  .app-shell {
+    max-width: 1320px;
+  }
+  main {
+    max-width: 1140px;
+  }
+  .clue-column {
+    max-height: 620px;
+  }
+}
+@media (max-width: 980px) {
+  .app-shell {
+    padding: 0 28px;
+  }
+  .game-body {
+    gap: 24px;
+    padding: 24px;
+  }
+  .game-settings {
+    padding: 24px;
+  }
+  .clue-column {
+    grid-template-columns: 1fr;
+    max-height: 570px;
+  }
+  .clue-count {
+    display: inline;
+    margin-left: 12px;
+  }
+  .game-body {
+    grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  }
+  .tools button {
+    padding: 9px 8px;
+  }
+  .game-bottom {
+    padding: 20px 24px;
+  }
+  .intro-flower {
+    right: 30px;
+  }
+}
+@media (max-width: 700px) {
+  .app-shell {
+    padding: 0 18px;
+  }
+  .site-header {
+    height: 80px;
+  }
+  .brand {
+    font-size: 20px;
+  }
+  .brand .flower {
+    width: 27px;
+    height: 27px;
+  }
+  .site-header .text-button {
+    font-size: 11px;
+    padding: 5px;
+  }
+  .site-header .text-button span {
+    margin-left: 4px;
+  }
+  .intro {
+    padding: 36px 2px 30px;
+  }
+  h1 {
+    font-size: 39px;
+    letter-spacing: -1.4px;
+    margin-top: 17px;
+  }
+  .eyebrow {
+    font-size: 8px;
+    letter-spacing: 1.5px;
+  }
+  .intro > p {
+    font-size: 12px;
+  }
+  .intro-flower {
+    right: 3px;
+    top: 65px;
+  }
+  .intro-flower .flower {
+    width: 54px;
+    height: 54px;
+  }
+  .intro-flower span {
+    font-size: 11px;
+    margin-top: 9px;
+  }
+  .game-card {
+    border-radius: 15px;
+  }
+  .game-settings {
+    flex-wrap: wrap;
+    gap: 19px;
+    padding: 20px;
+  }
+  .game-settings > div {
+    width: 100%;
+  }
+  .field-label {
+    font-size: 8px;
+    margin-bottom: 9px;
+  }
+  .segmented button {
+    flex: 1;
+    min-width: 0;
+    padding: 8px;
+  }
+  .difficulty {
+    margin-top: 0;
+    gap: 10px;
+  }
+  .difficulty button {
+    font-size: 11px;
+    padding: 7px 14px;
+  }
+  .game-body {
+    display: block;
+    padding: 20px;
+  }
+  .board-heading {
+    font-size: 9px;
+  }
+  .cell input {
+    font-size: 28px;
+  }
+  .size-11 .cell input {
+    font-size: 20px;
+  }
+  .size-15 .cell input {
+    font-size: 14px;
+  }
+  .size-15 .cell-number {
+    font-size: 5px;
+  }
+  .cell-number {
+    font-size: 8px;
+    left: 4px;
+    top: 2px;
+  }
+  .clue-column {
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    max-height: 360px;
+    margin-top: 27px;
+    padding-top: 2px;
+  }
+  .clue-section h2 {
+    font-size: 19px;
+  }
+  .clue-count {
+    display: block;
+    margin-left: 25px;
+  }
+  .clue-section li button {
+    font-size: 11px;
+    padding: 8px 4px;
+  }
+  .tools {
+    gap: 5px;
+  }
+  .tools button {
+    flex: 1;
+    padding: 10px 4px;
+  }
+  .tools button span {
+    font-size: 9px;
+    margin-left: 2px;
+  }
+  .current-clue {
+    padding: 12px 10px;
+    gap: 9px;
+  }
+  .current-clue p {
+    font-size: 11px;
+  }
+  .clue-tag {
+    font-size: 8px;
+  }
+  .game-bottom {
+    padding: 17px 20px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+  .game-bottom > div {
+    justify-content: space-between;
+    flex-direction: row-reverse;
+  }
+  .save-status {
+    text-align: center;
+    font-size: 10px;
+  }
+  .primary-button {
+    font-size: 11px;
+    padding: 11px 14px;
+  }
+  .gentle-message {
+    font-size: 11px;
+    padding: 20px 8px;
+  }
+  footer {
+    font-size: 9px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  footer details {
+    max-width: 100%;
+    order: 3;
+    flex-basis: 100%;
+  }
+  .desktop-break {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

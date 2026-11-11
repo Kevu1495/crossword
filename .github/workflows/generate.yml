@@ -1,0 +1,38 @@
+name: Replenish reviewed puzzles
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '23 4 * * *'
+permissions:
+  contents: read
+concurrency:
+  group: puzzle-generation
+  cancel-in-progress: false
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python3 -m unittest discover -s generator/tests -v
+      - run: python3 generator/batch.py --count 2
+      - uses: actions/upload-artifact@v4
+        with:
+          name: reviewed-puzzle-batch
+          path: |
+            generator/datasets/batch.json
+            generator/datasets/batch.sql
+      - name: Publish with configured D1 credentials
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_DATABASE_ID: ${{ secrets.CLOUDFLARE_DATABASE_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          if [ -n "$CLOUDFLARE_API_TOKEN" ] && [ -n "$CLOUDFLARE_ACCOUNT_ID" ] && [ -n "$CLOUDFLARE_DATABASE_ID" ]; then
+            python3 scripts/publish_batch.py generator/datasets/batch.sql
+          else
+            echo 'Batch saved as artifact. Add D1 secrets to enable publication.'
+          fi
