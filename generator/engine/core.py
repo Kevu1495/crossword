@@ -82,13 +82,14 @@ class NoFill(Exception):
     pass
 
 
-def solve(layout, records, seed=0, max_seconds=10, max_nodes=100000):
+def solve(layout, records, seed=0, max_seconds=10, max_nodes=100000, excluded_answers=None):
     slots = slots_for(layout)
     rng = random.Random(seed)
     by_word = defaultdict(list)
     for record in records:
         by_word[record['answer']].append(record)
-    words = sorted(by_word)
+    excluded_answers = set(excluded_answers or ())
+    words = sorted(set(by_word) - excluded_answers)
     domains_by_length, index = defaultdict(set), defaultdict(set)
     for word in words:
         domains_by_length[len(word)].add(word)

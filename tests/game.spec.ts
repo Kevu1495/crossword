@@ -1,5 +1,7 @@
 import { test, expect } from "@playwright/test";
 import { readFileSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
 import type { Puzzle } from "../frontend/src/puzzle";
 const puzzles = JSON.parse(
   readFileSync(
@@ -37,9 +39,9 @@ test("play, check, hint, save, switch modes and finish", async ({ page }) => {
   await expect(
     page.getByRole("group", { name: "15 by 15 crossword" }),
   ).toBeVisible();
-  await page.getByRole("button", { name: "Hard", exact: true }).click();
+  await page.getByRole("button", { name: "Thoughtful", exact: true }).click();
   await expect(
-    page.getByRole("button", { name: "Hard", exact: true }),
+    page.getByRole("button", { name: "Thoughtful", exact: true }),
   ).toHaveAttribute("aria-pressed", "true");
   await page.getByRole("button", { name: "7 × 7", exact: false }).click();
   const current = puzzles.find((p) => p.size === 7 && p.difficulty === "hard")!;
@@ -89,9 +91,9 @@ test("keyboard controls, mobile layout and help", async ({ page }) => {
       () => document.documentElement.scrollWidth <= window.innerWidth,
     ),
   ).toBe(true);
-  await page.screenshot({ path: "/tmp/crossword-mobile.png", fullPage: true });
+  await page.screenshot({ path: join(tmpdir(), "crossword-mobile.png"), fullPage: true });
   await page.setViewportSize({ width: 1440, height: 1100 });
-  await page.screenshot({ path: "/tmp/crossword-desktop.png", fullPage: true });
+  await page.screenshot({ path: join(tmpdir(), "crossword-desktop.png"), fullPage: true });
 });
 test("clicking a new cell keeps direction and clicking it again switches", async ({
   page,

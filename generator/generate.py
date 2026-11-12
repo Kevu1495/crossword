@@ -8,7 +8,7 @@ from engine.core import NoFill, solve, template
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def generate(records, size, difficulty, seed, attempts=15, seconds=3):
+def generate(records, size, difficulty, seed, attempts=15, seconds=3, excluded_answers=None):
     # Difficulty is provisional until playtested; use clue difficulty, not source name.
     bands = {'easy': (1,2), 'medium': (2,3), 'hard': (3,5)}
     low, high = bands[difficulty]
@@ -17,7 +17,7 @@ def generate(records, size, difficulty, seed, attempts=15, seconds=3):
         current_seed = seed * 100 + attempt
         layout = template(size, current_seed)
         try:
-            puzzle = solve(layout, pool, current_seed, max_seconds=seconds)
+            puzzle = solve(layout, pool, current_seed, max_seconds=seconds, excluded_answers=excluded_answers)
             puzzle['difficulty'] = difficulty
             puzzle['id'] = hashlib.sha256(('\n'.join(puzzle['solution']) + difficulty).encode()).hexdigest()[:20]
             puzzle['review'] = 'candidate'
@@ -37,12 +37,15 @@ if __name__ == '__main__':
     p.add_argument('--output', type=Path, default=ROOT / 'generator/datasets/generated.json')
     args = p.parse_args()
     data = json.loads((ROOT / 'generator/datasets/candidates.json').read_text())
+    existing = json.loads((ROOT / 'frontend/src/puzzles.json').read_text(encoding='utf-8'))
+    used_answers = {e['answer'] for puzzle in existing for e in puzzle['entries']}
     puzzles, seen = [], set()
     for i in range(args.count):
-        puzzle = generate(data, args.size, args.difficulty, args.seed+i, seconds=args.seconds)
+        puzzle = generate(data, args.size, args.difficulty, args.seed+i, seconds=args.seconds, excluded_answers=used_answers)
         if puzzle['id'] not in seen:
             puzzles.append(puzzle)
             seen.add(puzzle['id'])
+            used_answers.update(e['answer'] for e in puzzle['entries'])
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(puzzles, indent=2) + '\n')
     print(f'Generated {len(puzzles)} validated candidate puzzles at {args.output}')

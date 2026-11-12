@@ -17,6 +17,7 @@ def batch(seed, count=1, seconds=2, attempts=12):
         layout=[''.join('#' if c=='#' else '.' for c in row) for row in p['solution']]
         if layout not in templates[p['size']]: templates[p['size']].append(layout)
     known={p['id'] for p in initial}
+    used_answers={e['answer'] for p in initial for e in p['entries']}
     puzzles=[]
     for size in (7,11,15):
         for difficulty in ('easy','medium','hard'):
@@ -34,12 +35,14 @@ def batch(seed, count=1, seconds=2, attempts=12):
                 attempt_seed=seed+size*1000+attempt
                 layout=templates[size][attempt%len(templates[size])]
                 try:
-                    p=solve(layout,bank,attempt_seed,max_seconds=seconds)
+                    p=solve(layout,bank,attempt_seed,max_seconds=seconds,excluded_answers=used_answers)
                     p.update(difficulty=difficulty,review='approved')
                     p['id']=hashlib.sha256(('\n'.join(p['solution'])+difficulty).encode()).hexdigest()[:20]
                     if p['id'] in known: continue
                     validate(p)
-                    known.add(p['id']);puzzles.append(p);added+=1
+                    known.add(p['id'])
+                    used_answers.update(e['answer'] for e in p['entries'])
+                    puzzles.append(p);added+=1
                     if added>=count: break
                 except NoFill:
                     continue
@@ -58,5 +61,6 @@ if __name__=='__main__':
     puzzles,records=batch(args.seed,args.count,args.seconds,args.attempts)
     args.output.parent.mkdir(parents=True,exist_ok=True)
     args.output.write_text(json.dumps(puzzles,ensure_ascii=False,indent=2)+'\n')
-    args.output.with_suffix('.sql').write_text('\n'.join(export_sql(puzzles,records))+'\n')
+    initial=json.loads((ROOT/'frontend/src/puzzles.json').read_text(encoding='utf-8'))
+    args.output.with_suffix('.sql').write_text('\n'.join(export_sql(puzzles,records,initial))+'\n',encoding='utf-8')
     if not puzzles: raise SystemExit('No new puzzles found; existing inventory is unchanged')

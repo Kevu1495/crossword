@@ -5,18 +5,18 @@ The game is a cute, quiet place to enjoy crosswords. There are **no timers, scor
 ## Play
 
 - English general knowledge and vocabulary, for a broad international audience.
-- Nine modes: 7×7, 11×11 and 15×15, each Easy, Medium and Hard. Every mode has at least three distinct grid patterns; rotated or mirrored copies do not count as additional patterns.
+- Nine modes: 7×7, 11×11 and 15×15, each Gentle, Steady and Thoughtful (stored as easy, medium and hard for compatibility). Every mode has at least three distinct grid patterns; rotated or mirrored copies do not count as additional patterns. Expansion target: at least three additional patterns per grid size, subject to reviewed vocabulary supporting valid fills.
 - Every grid is connected. Each open square belongs to one Across and one Down answer. Answers have at least three letters. Initial templates have 180-degree rotational symmetry. Repeated answers in one puzzle are forbidden.
-- Answers use A–Z; spaces, accents, apostrophes and hyphens are normalized. Clues must signal abbreviations, foreign words, contractions and regional spellings when needed. No arbitrary personal-name fill-in-the-blanks or stretched spellings.
+- Answers use A–Z; spaces, accents, apostrophes and hyphens are normalized. New puzzles must not reuse an answer already present in the collection. Existing legacy puzzles retain their IDs and saved progress, including historical repeated answers. Clues must signal abbreviations, foreign words, contractions and regional spellings when needed. No arbitrary personal-name fill-in-the-blanks or stretched spellings.
 - Select a clue or cell; type to fill and advance. Click the selected cell again or use Space to switch direction. Arrow keys move; Backspace erases; Enter selects the next clue. Tab moves between the board and controls.
 - Check the selected word, reveal the selected letter, or reveal the selected word. Hints are unlimited; revealed cells receive a discreet marker. Incorrect letters are only marked when the player asks to check.
-- Finish when all open squares match the solution. Show a gentle inline celebration, without interrupting play or comparing performance.
+- Check the whole grid automatically when every open square is filled. Mark incorrect letters gently; when all open squares match the solution, show an inline celebration without interrupting play or comparing performance.
 - Progress saves per puzzle in the current browser when local storage is available. Storage failure must be communicated without preventing play. No accounts or cross-device sync.
 - Prefer unseen puzzles in each mode; when all are seen, allow revisiting. Keep progress when switching modes or puzzles. Confirm before clearing a puzzle.
 
 ## Visual direction
 
-Warm Café & Cherry Blossom: cream `#FFF8F0`, blush `#FDE2E4`, espresso `#3D3436`, sage `#CDEAC0` for the active word, coral `#FF758F` for the selected cell and primary buttons. Airy layout, rounded panels, small floral touches and readable typography. Mobile and desktop layouts, visible keyboard focus, reduced-motion support and accessible labels. A separate dark theme is deferred so the approved palette remains consistent.
+Warm Café & Cherry Blossom: cream `#FFF8F0`, blush `#FDE2E4`, warm charcoal `#655557`, sage `#CDEAC0` for the active word, coral `#FF758F` for the selected cell and primary buttons. Airy layout, rounded panels, small lotus touches and readable typography. Mobile and desktop layouts, visible keyboard focus, reduced-motion support and accessible labels. A separate dark theme is deferred so the approved palette remains consistent.
 
 ## Data and infrastructure
 

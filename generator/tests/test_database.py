@@ -10,16 +10,16 @@ ROOT=Path(__file__).resolve().parents[2]
 
 class DatabaseTests(unittest.TestCase):
     def setUp(self):
-        self.puzzles=json.loads((ROOT/'frontend/src/puzzles.json').read_text())
-        self.records=json.loads((ROOT/'generator/datasets/approved.json').read_text())
+        self.puzzles=json.loads((ROOT/'frontend/src/puzzles.json').read_text(encoding='utf-8'))
+        self.records=json.loads((ROOT/'generator/datasets/approved.json').read_text(encoding='utf-8'))
         self.db=sqlite3.connect(':memory:')
-        self.db.executescript((ROOT/'worker/migrations/0001_initial.sql').read_text())
+        self.db.executescript((ROOT/'worker/migrations/0001_initial.sql').read_text(encoding='utf-8'))
 
     def tearDown(self): self.db.close()
 
     def test_export_is_idempotent_and_keeps_provenance(self):
         sql='\n'.join(export_sql(self.puzzles,self.records))
-        self.assertEqual((ROOT/'worker/seed.sql').read_text(),sql+'\n')
+        self.assertEqual((ROOT/'worker/seed.sql').read_text(encoding='utf-8'),sql+'\n')
         self.db.executescript(sql);self.db.executescript(sql)
         self.assertEqual(self.db.execute('SELECT count(*) FROM puzzles').fetchone()[0],len(self.puzzles))
         self.assertEqual(self.db.execute('PRAGMA foreign_key_check').fetchall(),[])
@@ -37,5 +37,17 @@ class DatabaseTests(unittest.TestCase):
             if field=='review':ps[0]['review']='candidate'
             else:ps[0]['entries'][0]['clue']='Unreviewed alteration'
             with self.assertRaises(ValueError):export_sql(ps,self.records)
+
+    def test_new_puzzle_cannot_reuse_an_answer_from_the_collection(self):
+        legacy=self.puzzles[0]
+        new=copy.deepcopy(self.puzzles[1])
+        shared=legacy['entries'][0]['answer']
+        target=next(e for e in new['entries'] if e['answer'] not in {x['answer'] for x in legacy['entries']})
+        target['answer']=shared
+        for i in range(len(shared)):
+            r=target['row']+(i if target['direction']=='down' else 0)
+            c=target['col']+(i if target['direction']=='across' else 0)
+            line=list(new['solution'][r]);line[c]=shared[i];new['solution'][r]=''.join(line)
+        with self.assertRaises(ValueError):export_sql([new],self.records,[legacy])
 
 if __name__=='__main__':unittest.main()

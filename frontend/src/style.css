@@ -132,19 +132,18 @@ h1 em {
   line-height: 1.85;
   margin: 0;
 }
-.intro-flower {
+.intro-lotus {
   position: absolute;
   right: 72px;
   top: 94px;
   display: flex;
   align-items: center;
   flex-direction: column;
-  transform: rotate(12deg);
 }
-.intro-flower .flower {
+.intro-lotus .flower {
   opacity: 0.77;
 }
-.intro-flower span {
+.intro-lotus span {
   font-family: Lora, Georgia, serif;
   font-style: italic;
   font-size: 15px;
@@ -251,9 +250,9 @@ h1 em {
   display: grid;
   gap: 1px;
   padding: 2px;
-  border: 1px solid var(--espresso);
+  border: 1px solid #8c7474;
   border-radius: 7px;
-  background: var(--espresso);
+  background: #8c7474;
   overflow: hidden;
   aspect-ratio: 1;
 }
@@ -266,7 +265,7 @@ h1 em {
   transition: background 0.12s;
 }
 .cell.active-word {
-  background: var(--sage);
+  background: #dcebd4;
 }
 .cell.selected {
   background: var(--coral);
@@ -335,7 +334,7 @@ h1 em {
   top: 2px;
 }
 .blocked {
-  background: var(--espresso);
+  background: #8c7474;
   aspect-ratio: 1;
 }
 .current-clue {
@@ -544,6 +543,18 @@ h1 em {
   font-size: 12px;
   margin: 7px 0;
 }
+.needs-a-look {
+  background: #fbf0e6;
+  border-radius: 14px;
+  margin: 18px 0;
+  color: #765d58;
+  font-style: normal;
+}
+.needs-a-look p {
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+  margin: 7px 0;
+}
 footer {
   border-top: 1px solid #eadfd5;
   padding: 23px 0 30px;
@@ -567,8 +578,10 @@ footer summary {
 footer details p {
   margin-top: 10px;
 }
-.footer-flower {
-  color: #c9919f;
+footer > .flower {
+  width: 28px;
+  height: 28px;
+  opacity: 0.72;
 }
 dialog {
   border: 1px solid #e2cfc8;
@@ -643,7 +656,7 @@ dialog::backdrop {
   .game-bottom {
     padding: 20px 24px;
   }
-  .intro-flower {
+  .intro-lotus {
     right: 30px;
   }
 }
@@ -683,15 +696,16 @@ dialog::backdrop {
   .intro > p {
     font-size: 12px;
   }
-  .intro-flower {
+  .intro-lotus {
     right: 3px;
     top: 65px;
+    transform: rotate(0);
   }
-  .intro-flower .flower {
+  .intro-lotus .flower {
     width: 54px;
     height: 54px;
   }
-  .intro-flower span {
+  .intro-lotus span {
     font-size: 11px;
     margin-top: 9px;
   }
@@ -748,9 +762,9 @@ dialog::backdrop {
     top: 2px;
   }
   .clue-column {
-    grid-template-columns: 1fr 1fr;
-    gap: 18px;
-    max-height: 360px;
+    grid-template-columns: 1fr;
+    gap: 22px;
+    max-height: none;
     margin-top: 27px;
     padding-top: 2px;
   }
@@ -762,8 +776,8 @@ dialog::backdrop {
     margin-left: 25px;
   }
   .clue-section li button {
-    font-size: 11px;
-    padding: 8px 4px;
+    font-size: 13px;
+    padding: 10px 7px;
   }
   .tools {
     gap: 5px;
@@ -781,7 +795,8 @@ dialog::backdrop {
     gap: 9px;
   }
   .current-clue p {
-    font-size: 11px;
+    font-size: 13px;
+    line-height: 1.65;
   }
   .clue-tag {
     font-size: 8px;

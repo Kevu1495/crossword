@@ -74,7 +74,17 @@ export default function App() {
   const complete = puzzle ? isComplete(puzzle, progress.letters) : false;
   const filled = Object.keys(progress.letters).length;
   const total = puzzle?.solution.join("").replaceAll("#", "").length ?? 0;
-
+  const gridFilled = filled === total;
+  const mistakes = gridFilled
+    ? puzzle.solution.flatMap((line, row) =>
+        Array.from(line, (letter, col) => {
+          const cell = key(row, col);
+          return letter !== "#" && progress.letters[cell] !== letter
+            ? cell
+            : [];
+        }),
+      )
+    : [];
   useEffect(() => {
     if (!puzzle) return;
     try {
@@ -343,7 +353,7 @@ export default function App() {
             <br className="desktop-break" /> No clocks. No scores. Just one word
             at a time.
           </p>
-          <div className="intro-flower" aria-hidden="true">
+          <div className="intro-lotus" aria-hidden="true">
             <Flower />
             <span>take your time</span>
           </div>
@@ -377,7 +387,7 @@ export default function App() {
               </div>
             </div>
             <div>
-              <span className="field-label">IN THE MOOD FOR</span>
+              <span className="field-label">PUZZLE FEEL</span>
               <div className="difficulty" aria-label="Difficulty">
                 {(["easy", "medium", "hard"] as const).map((d) => (
                   <button
@@ -389,7 +399,11 @@ export default function App() {
                     <span aria-hidden="true">
                       {d === "easy" ? "☁" : d === "medium" ? "✿" : "✧"}
                     </span>{" "}
-                    {d[0].toUpperCase() + d.slice(1)}
+                    {d === "easy"
+                      ? "Gentle"
+                      : d === "medium"
+                        ? "Steady"
+                        : "Thoughtful"}
                   </button>
                 ))}
               </div>
@@ -430,7 +444,7 @@ export default function App() {
                     return (
                       <div
                         key={k}
-                        className={`cell ${highlighted ? "active-word" : ""} ${selected === k ? "selected" : ""} ${wrong.includes(k) ? "wrong" : ""} ${progress.revealed.includes(k) ? "revealed" : ""}`}
+                        className={`cell ${highlighted ? "active-word" : ""} ${selected === k ? "selected" : ""} ${wrong.includes(k) || mistakes.includes(k) ? "wrong" : ""} ${progress.revealed.includes(k) ? "revealed" : ""}`}
                       >
                         {start && (
                           <span className="cell-number" aria-hidden="true">
@@ -442,7 +456,7 @@ export default function App() {
                             inputs.current[k] = element;
                           }}
                           aria-label={`Row ${r + 1}, column ${c + 1}${start ? `, ${start.number}` : ""}, ${active.direction}${progress.revealed.includes(k) ? ", revealed" : ""}`}
-                          aria-invalid={wrong.includes(k)}
+                          aria-invalid={wrong.includes(k) || mistakes.includes(k)}
                           tabIndex={selected === k ? 0 : -1}
                           value={progress.letters[k] ?? ""}
                           maxLength={2}
@@ -569,7 +583,7 @@ export default function App() {
           </div>
         </section>
         <div
-          className={`gentle-message ${complete ? "celebration" : ""}`}
+          className={`gentle-message ${complete ? "celebration" : gridFilled ? "needs-a-look" : ""}`}
           role="status"
           aria-live="polite"
         >
@@ -582,6 +596,14 @@ export default function App() {
                   What a lovely thing to finish. Stay a while, or try another
                   puzzle.
                 </p>
+              </div>
+            </>
+          ) : gridFilled ? (
+            <>
+              <span aria-hidden="true">♡</span>
+              <div>
+                <strong>A few letters may need another look.</strong>
+                <p>{mistakes.length} dotted squares are a gentle place to start.</p>
               </div>
             </>
           ) : (
@@ -608,9 +630,7 @@ export default function App() {
               browser.
             </p>
           </details>
-          <span className="footer-flower" aria-hidden="true">
-            ✦
-          </span>
+          <Flower small />
         </footer>
       </main>
       <dialog

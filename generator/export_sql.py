@@ -11,10 +11,12 @@ def quoted(value):
     return "'" + str(value).replace("'", "''") + "'"
 
 
-def export_sql(puzzles, records):
+def export_sql(puzzles, records, existing_puzzles=()):
     approved={r['id']:r for r in records if r.get('review')=='approved'}
     statements=[]
     sources={}
+    seen_answers={e['answer'] for p in existing_puzzles for e in p['entries']}
+    legacy_ids={p['id'] for p in existing_puzzles}
     for r in approved.values():
         sid=hashlib.sha256((r['source']+r['revision']+r['license']).encode()).hexdigest()[:20]
         sources[r['id']]=sid
@@ -25,6 +27,12 @@ def export_sql(puzzles, records):
         validate(p)
         if p.get('review')!='approved':
             raise ValueError('Cannot export unapproved puzzles')
+        puzzle_answers={e['answer'] for e in p['entries']}
+        duplicate_answers=puzzle_answers & seen_answers
+        is_legacy=p['id'] in legacy_ids
+        if duplicate_answers and existing_puzzles and not is_legacy:
+            raise ValueError(f"Answers already used in this puzzle collection: {', '.join(sorted(duplicate_answers))}")
+        seen_answers.update(puzzle_answers)
         for e in p['entries']:
             record=approved.get(e['clueId'])
             if not record or record['answer']!=e['answer'] or record['clue']!=e['clue']:
@@ -44,5 +52,9 @@ if __name__=='__main__':
     parser.add_argument('--output',type=Path,default=ROOT/'worker/seed.sql')
     args=parser.parse_args()
     records=json.loads((ROOT/'generator/datasets/approved.json').read_text())
-    args.output.write_text('\n'.join(export_sql(json.loads(args.puzzles.read_text()),records))+'\n')
+    puzzles=json.loads(args.puzzles.read_text(encoding='utf-8'))
+    initial=json.loads((ROOT/'frontend/src/puzzles.json').read_text(encoding='utf-8'))
+    baseline_ids={p['id'] for p in initial}
+    additions=[p for p in puzzles if p['id'] not in baseline_ids]
+    args.output.write_text('\n'.join(export_sql(additions,records,initial))+'\n',encoding='utf-8')
     print(f'Wrote reviewed seed SQL to {args.output}')
