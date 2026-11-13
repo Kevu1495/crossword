@@ -13,12 +13,16 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
       - run: python3 -m unittest discover -s generator/tests -v
-      - run: python3 generator/batch.py --count 2
+      - name: Generate reviewed puzzles
+        id: batch
+        run: |
+          python3 generator/batch.py --count 2 --allow-empty
+          python3 -c 'import json, os; puzzles=json.load(open("generator/datasets/batch.json")); open(os.environ["GITHUB_OUTPUT"], "a").write(f"count={len(puzzles)}\n"); open(os.environ["GITHUB_STEP_SUMMARY"], "a").write(f"Generated {len(puzzles)} new reviewed puzzles.\n" + ("No additions: expand the approved clue bank to replenish inventory. Existing puzzles are unchanged.\n" if not puzzles else ""))'
       - uses: actions/upload-artifact@v4
         with:
           name: reviewed-puzzle-batch
@@ -26,6 +30,7 @@ jobs:
             generator/datasets/batch.json
             generator/datasets/batch.sql
       - name: Publish with configured D1 credentials
+        if: steps.batch.outputs.count != '0'
         env:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           CLOUDFLARE_DATABASE_ID: ${{ secrets.CLOUDFLARE_DATABASE_ID }}

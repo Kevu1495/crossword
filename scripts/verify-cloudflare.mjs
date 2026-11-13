@@ -93,7 +93,7 @@ try {
     await page
       .getByRole("group", { name: `${size} by ${size} crossword` })
       .waitFor();
-    for (const difficulty of ["Medium", "Hard", "Easy"]) {
+    for (const difficulty of ["Steady", "Thoughtful", "Gentle"]) {
       await page.getByRole("button", { name: difficulty, exact: true }).click();
       await page.waitForFunction(
         (d) =>

@@ -56,6 +56,7 @@ if __name__=='__main__':
     parser.add_argument('--count',type=int,default=1)
     parser.add_argument('--seconds',type=float,default=2)
     parser.add_argument('--attempts',type=int,default=12)
+    parser.add_argument('--allow-empty',action='store_true',help='Treat exhausted reviewed vocabulary as a successful no-op')
     parser.add_argument('--output',type=Path,default=ROOT/'generator/datasets/batch.json')
     args=parser.parse_args()
     puzzles,records=batch(args.seed,args.count,args.seconds,args.attempts)
@@ -63,4 +64,7 @@ if __name__=='__main__':
     args.output.write_text(json.dumps(puzzles,ensure_ascii=False,indent=2)+'\n')
     initial=json.loads((ROOT/'frontend/src/puzzles.json').read_text(encoding='utf-8'))
     args.output.with_suffix('.sql').write_text('\n'.join(export_sql(puzzles,records,initial))+'\n',encoding='utf-8')
-    if not puzzles: raise SystemExit('No new puzzles found; existing inventory is unchanged')
+    if not puzzles:
+        message='No new puzzles found; existing inventory is unchanged. Expand the approved clue bank to replenish puzzles.'
+        if not args.allow_empty: raise SystemExit(message)
+        print(message,flush=True)

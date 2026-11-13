@@ -91,9 +91,15 @@ test("keyboard controls, mobile layout and help", async ({ page }) => {
       () => document.documentElement.scrollWidth <= window.innerWidth,
     ),
   ).toBe(true);
-  await page.screenshot({ path: join(tmpdir(), "crossword-mobile.png"), fullPage: true });
+  await page.screenshot({
+    path: join(tmpdir(), "crossword-mobile.png"),
+    fullPage: true,
+  });
   await page.setViewportSize({ width: 1440, height: 1100 });
-  await page.screenshot({ path: join(tmpdir(), "crossword-desktop.png"), fullPage: true });
+  await page.screenshot({
+    path: join(tmpdir(), "crossword-desktop.png"),
+    fullPage: true,
+  });
 });
 test("clicking a new cell keeps direction and clicking it again switches", async ({
   page,
@@ -126,4 +132,41 @@ test("Across clues followed by a Down clue keep the clicked Down word selected",
   await down.nth(1).click();
   await expect(down.nth(1)).toHaveAttribute("aria-pressed", "true");
   await expect(page.locator(".clue-tag")).toContainText("down");
+});
+
+test("completion popup celebrates correct answers and varies on the next solve", async ({
+  page,
+}) => {
+  await page.goto("/");
+  const puzzle = puzzles[0];
+  await page.evaluate((p) => {
+    const letters: Record<string, string> = {};
+    p.solution.forEach((row, r) =>
+      Array.from(row).forEach((letter, c) => {
+        if (letter !== "#") letters[`${r},${c}`] = letter;
+      }),
+    );
+    const first = Object.keys(letters)[0];
+    letters[first] = letters[first] === "Z" ? "A" : "Z";
+    localStorage.setItem(
+      `crossword:v1:${p.id}`,
+      JSON.stringify({ letters, revealed: [] }),
+    );
+    localStorage.setItem("crossword:last", JSON.stringify(p.id));
+  }, puzzle);
+  await page.reload();
+  const popup = page.getByRole("dialog");
+  await expect(popup).not.toBeVisible();
+  await page.locator("input").first().fill(puzzle.solution[0][0]);
+  await expect(popup).toBeVisible();
+  const title = await popup.getByRole("heading").innerText();
+  await popup.getByRole("button", { name: "Enjoy this moment" }).click();
+  await expect(popup).not.toBeVisible();
+  await page.locator("input").first().fill("");
+  await page.locator("input").first().fill(puzzle.solution[0][0]);
+  await expect(popup).toBeVisible();
+  await expect(popup.getByRole("heading")).not.toHaveText(title);
+  await page.keyboard.press("Escape");
+  await page.reload();
+  await expect(popup).not.toBeVisible();
 });

@@ -17,3 +17,5 @@ python3 generator/generate.py --count 3
 `generate.py` produces candidates for editorial review. `batch.py` uses only the approved bank. New clues must be reviewed for accuracy, answer agreement, sensitive language, arbitrary names, ambiguity, indication of abbreviations and regional spellings. Preserve original provenance when unchanged; attribute rewritten clues to Little Crossword. Keep difficulty provisional until playtested.
 
 The reviewed bank is deliberately modest. Replenishment may not fill a requested batch in every mode; it must leave inventory unchanged rather than relax validity. Expand approved vocabulary and templates to improve variety. No WordNet material is currently included.
+
+The scheduled workflow uses `batch.py --allow-empty` so an exhausted bank finishes successfully, reports zero additions in the run summary, and skips publication. Manual runs remain strict by default: an empty batch exits with status 1 unless `--allow-empty` is supplied. Unexpected errors still fail the workflow.

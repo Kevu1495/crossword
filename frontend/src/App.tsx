@@ -13,6 +13,32 @@ import type { Difficulty, Entry, Progress, Puzzle } from "./puzzle";
 import puzzleData from "./puzzles.json";
 const pool = puzzleData as Puzzle[];
 const empty: Progress = { letters: {}, revealed: [] };
+const completionMessages = [
+  {
+    title: "You did it. Beautifully.",
+    body: "Every little word found its place. A little patience, a little curiosity, and a whole puzzle solved. Nicely done!",
+  },
+  {
+    title: "Look at you, word finder.",
+    body: "One clue at a time, you brought it all together. Take a little moment to feel proud.",
+  },
+  {
+    title: "A lovely little victory.",
+    body: "The last letter is in, and the puzzle is complete. Here’s to curious minds and small, happy wins.",
+  },
+  {
+    title: "All the pieces, in their places.",
+    body: "You followed the clues and found your way. That’s a whole grid of lovely work.",
+  },
+  {
+    title: "Your curiosity is blooming.",
+    body: "Another puzzle, beautifully finished. Let that little spark of satisfaction stay with you awhile.",
+  },
+  {
+    title: "That deserves a happy pause.",
+    body: "Every crossing has clicked into place. Sit back, take a breath, and enjoy what you’ve finished.",
+  },
+];
 function stored<T>(name: string, fallback: T): T {
   try {
     return JSON.parse(localStorage.getItem(name) || "null") ?? fallback;
@@ -55,9 +81,12 @@ export default function App() {
   const [message, setMessage] = useState("A little curiosity is all you need.");
   const [wrong, setWrong] = useState<string[]>([]);
   const [help, setHelp] = useState(false);
-  const [dialog, setDialog] = useState<"new" | "restart" | "reveal" | null>(
-    null,
+  const [completionMessage, setCompletionMessage] = useState(
+    completionMessages[0],
   );
+  const [dialog, setDialog] = useState<
+    "new" | "restart" | "reveal" | "complete" | null
+  >(null);
   const [loading, setLoading] = useState(false);
   const [storageAvailable, setStorageAvailable] = useState(true);
   const [seen, setSeen] = useState<string[]>(() => {
@@ -72,6 +101,7 @@ export default function App() {
   const requestNumber = useRef(0);
   const active = puzzle?.entries[activeIndex];
   const complete = puzzle ? isComplete(puzzle, progress.letters) : false;
+  const previousCompletion = useRef({ id: puzzle?.id, complete });
   const filled = Object.keys(progress.letters).length;
   const total = puzzle?.solution.join("").replaceAll("#", "").length ?? 0;
   const gridFilled = filled === total;
@@ -100,6 +130,20 @@ export default function App() {
       setStorageAvailable(false);
     }
   }, [puzzle, progress, seen]);
+  useEffect(() => {
+    const previous = previousCompletion.current;
+    if (previous.id === puzzle?.id && !previous.complete && complete) {
+      setCompletionMessage((previousMessage) => {
+        const choices = completionMessages.filter(
+          (message) => message !== previousMessage,
+        );
+        return choices[Math.floor(Math.random() * choices.length)];
+      });
+      setHelp(false);
+      setDialog("complete");
+    }
+    previousCompletion.current = { id: puzzle?.id, complete };
+  }, [puzzle?.id, complete]);
   useEffect(() => {
     if (dialog || help) modal.current?.showModal();
     else modal.current?.close();
@@ -456,7 +500,9 @@ export default function App() {
                             inputs.current[k] = element;
                           }}
                           aria-label={`Row ${r + 1}, column ${c + 1}${start ? `, ${start.number}` : ""}, ${active.direction}${progress.revealed.includes(k) ? ", revealed" : ""}`}
-                          aria-invalid={wrong.includes(k) || mistakes.includes(k)}
+                          aria-invalid={
+                            wrong.includes(k) || mistakes.includes(k)
+                          }
                           tabIndex={selected === k ? 0 : -1}
                           value={progress.letters[k] ?? ""}
                           maxLength={2}
@@ -603,7 +649,9 @@ export default function App() {
               <span aria-hidden="true">♡</span>
               <div>
                 <strong>A few letters may need another look.</strong>
-                <p>{mistakes.length} dotted squares are a gentle place to start.</p>
+                <p>
+                  {mistakes.length} dotted squares are a gentle place to start.
+                </p>
               </div>
             </>
           ) : (
@@ -646,11 +694,13 @@ export default function App() {
           <h2 id="dialog-title">
             {help
               ? "Make yourself at home."
-              : dialog === "restart"
-                ? "A fresh start?"
-                : dialog === "reveal"
-                  ? "A little helping hand?"
-                  : "Ready for another little puzzle?"}
+              : dialog === "complete"
+                ? completionMessage.title
+                : dialog === "restart"
+                  ? "A fresh start?"
+                  : dialog === "reveal"
+                    ? "A little helping hand?"
+                    : "Ready for another little puzzle?"}
           </h2>
           {help ? (
             <>
@@ -672,6 +722,22 @@ export default function App() {
               <button className="primary-button" onClick={closeModal}>
                 Lovely, let’s play
               </button>
+            </>
+          ) : dialog === "complete" ? (
+            <>
+              <p>{completionMessage.body}</p>
+              <div className="modal-actions">
+                <button className="text-button" onClick={closeModal} autoFocus>
+                  Enjoy this moment
+                </button>
+                <button
+                  className="primary-button"
+                  disabled={loading}
+                  onClick={() => void load()}
+                >
+                  Another little puzzle
+                </button>
+              </div>
             </>
           ) : (
             <>
